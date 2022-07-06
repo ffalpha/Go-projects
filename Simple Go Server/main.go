@@ -14,14 +14,14 @@ if err := r.ParseForm(); err!=nil{
 }
 fmt.Fprintf(w,"POST reuqest successful")
 name := r.FormValue("name")
-addres := r.FormValue("address")
+address := r.FormValue("address")
 fmt.Fprintf(w,"Name =%s\n",name)
-fmt.Fprintf(w,"Address =%s\n",addres)
+fmt.Fprintf(w,"Address =%s\n",address)
 }
 
 
 func helloHandler(w http.ResponseWriter,r *http.Request){
-  if r.URL.Path !="hello"{
+  if r.URL.Path !="/hello"{
 	http.Error(w,"404 not found",http.StatusNotFound)
 	return
   }
